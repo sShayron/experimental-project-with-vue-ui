@@ -1,7 +1,7 @@
 <template>
   <div class="titulo">
     <div style="display: flex">
-      <h1>{{ text }}</h1>
+      <h2>{{ text }}</h2>
       <div class="voltar">
         <slot />
         <button  v-if="btnVoltar" class="btn btn-voltar" @click="$router.back()">Voltar</button>
@@ -31,6 +31,7 @@ export default {
 .btn-voltar {
   float: right;
   background: rgb(199, 199, 199);
+  font-size: 1.2em;
 }
 </style>
 

@@ -40,7 +40,11 @@
                 {{ prof.nome }}
               </option>
             </select>
-            <label v-else>{{ aluno.professor.nome }}</label>
+            <label v-else>
+              <span v-if="aluno.professor">
+                {{ aluno.professor.nome }}
+              </span>
+            </label>
           </td>
         </tr>
       </tbody>
@@ -73,7 +77,9 @@ export default {
   },
   methods: {
     salvar() {
-
+      this.$http
+      .put(`http://localhost:3000/alunos/${this.aluno.id}`, this.aluno)
+      .then(() => this.isEditing = false);
     },
     cancelar() {
       this.isEditing = false;

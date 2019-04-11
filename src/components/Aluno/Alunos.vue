@@ -19,7 +19,7 @@
             {{ aluno.nome }} {{ aluno.sobrenome }}
           </router-link>
           <td>
-            <button class="btn" @click="remove(aluno)">Remover</button>
+            <button class="btn btn-remove" @click="remove(aluno)">Remover</button>
           </td>
         </tr>
       </tbody>
@@ -108,6 +108,9 @@ input {
   padding: 20px;
   margin: 0;
   border: 0;
+}
+.btn-remove {
+  font-size: 0.8em!important;
 }
 table {
   margin: 0px;
