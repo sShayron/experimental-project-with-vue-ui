@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Nav />
-    <router-view />
+    <router-view :key="$route.fullPath" />
   </div>
 </template>
 
@@ -39,6 +39,7 @@ body, html {
   border-radius: 5px;
   border-bottom: 3px solid black;
   transition: all .3s;
+  font-size: 1.2em;
 }
 .btn:hover {
   text-shadow: 1px 1px 1px black;

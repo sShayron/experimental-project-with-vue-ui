@@ -1,24 +1,69 @@
 {
+  "professores": [
+    {
+      "id": 1,
+      "nome": "prof 1"
+    },
+    {
+      "id": 2,
+      "nome": "prof 2"
+    }
+  ],
   "alunos": [
     {
       "id": 1,
-      "nome": "xx",
-      "sobrenome": "zz"
+      "nome": "alu 1",
+      "sobrenome": "zz",
+      "professor": {
+        "id": 1,
+        "nome": "prof 1"
+      }
     },
     {
       "id": 2,
       "nome": "shayro",
-      "sobrenome": "aguiar"
+      "sobrenome": "aguiar",
+      "dtNasc": "25/01/1995",
+      "professor": {
+        "id": 1,
+        "nome": "prof 1"
+      }
     },
     {
-      "nome": "xzxz",
+      "nome": "aluno 2",
       "sobrenome": "",
-      "id": 4
+      "id": 4,
+      "professor": {
+        "id": 1,
+        "nome": "prof 1"
+      }
     },
     {
-      "nome": "kk",
+      "nome": "aluno 3",
       "sobrenome": "",
-      "id": 5
+      "id": 5,
+      "professor": {
+        "id": 2,
+        "nome": "prof 2"
+      }
+    },
+    {
+      "nome": "ok",
+      "sobrenome": "",
+      "professor": {
+        "id": 2,
+        "nome": "prof 2"
+      },
+      "id": 6
+    },
+    {
+      "nome": "zx",
+      "sobrenome": "",
+      "professor": {
+        "id": 2,
+        "nome": "prof 2"
+      },
+      "id": 7
     }
   ]
 }

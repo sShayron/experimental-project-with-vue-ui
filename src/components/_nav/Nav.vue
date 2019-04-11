@@ -2,7 +2,7 @@
   <div class="container">
     <nav>
       <router-link to="/professores">Professores</router-link>
-      <router-link to="/alunos">Alunos</router-link>
+      <router-link to="/todos-alunos">Alunos</router-link>
       <router-link to="/sobre">Sobre</router-link>
     </nav>
   </div>

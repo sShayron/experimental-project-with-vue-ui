@@ -10,10 +10,10 @@
       <tbody v-if="professores.length">
         <tr v-for="(professor, index) in professores" :key="index">
           <td>{{ professor.id }}</td>
-          <router-link to="/alunos" tag="td" :style="{ cursor: 'pointer' }">
+          <router-link :to="`/alunos/${professor.id}`" tag="td" :style="{ cursor: 'pointer' }">
             {{ professor.nome }}
           </router-link>
-          <td>3</td>
+          <td>{{ professor.qtdAlunos }}</td>
         </tr>
       </tbody>
       <tfoot v-else>Nenhum professor encontrado</tfoot>
@@ -28,17 +28,39 @@ export default {
   components: { Titulo },
   data() {
     return {
-      professores: [
-        {
-          id: 1,
-          nome: 'xx'
-        },
-        {
-          id: 2,
-          nome: 'zz'
-        }
-      ]
+      professores: [],
+      alunos: []
     };
+  },
+  created() {
+    this.$http
+      .get('http://localhost:3000/alunos')
+      .then(res => res.json())
+      .then(alunos => {
+        this.alunos = alunos;
+        this.getProfessores();
+      });
+  },
+  methods: {
+    pegaQtdAlunos() {
+      this.professores.forEach((p, idx) => {
+        p = {
+          id: p.id,
+          nome: p.nome,
+          qtdAlunos: this.alunos.filter(x => x.professor.id == p.id).length
+        }
+        this.professores[idx] = p;
+      })
+    },
+    getProfessores() {
+      this.$http
+        .get('http://localhost:3000/professores')
+        .then(res => res.json())
+        .then(professores => {
+          this.professores = professores;
+          this.pegaQtdAlunos();
+        });
+    }
   }
 };
 </script>
