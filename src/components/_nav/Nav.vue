@@ -1,17 +1,15 @@
 <template>
   <div class="container">
     <nav>
-      <router-link to="/professores">Professores</router-link>
-      <router-link to="/todos-alunos">Alunos</router-link>
-      <router-link to="/sobre">Sobre</router-link>
+      <router-link to="/teachers">Teachers</router-link>
+      <router-link to="/students">Students</router-link>
+      <router-link to="/about">About</router-link>
     </nav>
   </div>
 </template>
 
 <script>
-  export default {
-    
-  }
+export default {};
 </script>
 
 <style scoped>
@@ -26,12 +24,12 @@ nav a {
   text-decoration: none;
   background-color: #fff;
   border-radius: 3px;
-  color: rgb(0 ,110, 255);
+  color: rgb(0, 110, 255);
   font-weight: bold;
   margin-right: 15px;
 }
 nav .router-link-active {
-  background-color: rgb(160 ,160, 160);
+  background-color: rgb(160, 160, 160);
   color: #fff;
 }
 </style>

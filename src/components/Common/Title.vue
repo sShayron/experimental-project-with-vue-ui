@@ -1,10 +1,10 @@
 <template>
-  <div class="titulo">
+  <div class="title">
     <div style="display: flex">
       <h2>{{ text }}</h2>
-      <div class="voltar">
-        <slot />
-        <button  v-if="btnVoltar" class="btn btn-voltar" @click="$router.back()">Voltar</button>
+      <div class="back">
+        <slot/>
+        <button v-if="btnBack" class="btn btn-back" @click="$router.back()">Back</button>
       </div>
     </div>
   </div>
@@ -14,21 +14,21 @@
 export default {
   props: {
     text: String,
-    btnVoltar: {
+    btnBack: {
       type: Boolean,
       default: true
     }
   }
-}
+};
 </script>
 
 <style scoped>
-.voltar {
+.back {
   width: 50%;
   position: absolute;
   margin-top: 15px;
 }
-.btn-voltar {
+.btn-back {
   float: right;
   background: rgb(199, 199, 199);
   font-size: 1.2em;

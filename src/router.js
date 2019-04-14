@@ -1,32 +1,32 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Alunos from './components/Aluno/Alunos.vue';
-import AlunoDetalhe from './components/Aluno/AlunoDetalhe.vue';
-import Professores from './components/Professor/Professores.vue';
-import Sobre from './components/Sobre/Sobre.vue';
+import Students from './components/Student/Students.vue';
+import StudentDetail from './components/Student/StudentDetail.vue';
+import Teachers from './components/Teacher/Teacher.vue';
+import About from './components/About/About.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/alunos/:profId',
-    component: Alunos
+    path: '/students/:teacId',
+    component: Students
   },
   {
-    path: '/todos-alunos',
-    component: Alunos
+    path: '/students',
+    component: Students
   },
   {
-    path: '/aluno-detalhe/:alunoId',
-    component: AlunoDetalhe
+    path: '/student-detail/:studentId',
+    component: StudentDetail
   },
   {
-    path: '/professores',
-    component: Professores
+    path: '/teachers',
+    component: Teachers
   },
   {
-    path: '/sobre',
-    component: Sobre
+    path: '/about',
+    component: About
   }
 ];
 
